@@ -83,6 +83,7 @@ startGeyser() {
     tmux new-session -d -s $tmuxSession 'sh start.sh'
 }
 
+checkDependencies
 checkForUpdates
 confirmUpdate
 stopGeyser
