@@ -1,7 +1,7 @@
 #!/bin/bash
 # Author: @certainly1182
 # Description: Checks for updates to Geyser and downloads them if available
-
+dependencies=(curl unzip tmux)
 # The name of the local Geyser jar
 localJar='Geyser-Standalone.jar'
 # Name of the tmux session where Geyser is running
@@ -10,6 +10,15 @@ tmuxSession='geyser'
 buildURL="https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/"
 jarURL="$buildURL/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar"
 buildNumberURL="$buildURL/buildNumber"
+
+checkDependencies() {
+    for command in "${dependencies[@]}"; do
+        if ! command -v "$command" &> /dev/null; then
+            echo "$command is not installed, please install it before running this script."
+            exit 1
+        fi
+    done
+}
 
 checkForUpdates() {
     # Get the local build number
