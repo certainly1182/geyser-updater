@@ -1,5 +1,5 @@
 # Geyser Updater Script
-This script checks for updates to the Geyser standalone jar and downloads it if available.
+This script checks for updates to the [Geyser](https://geysermc.org) standalone jar and downloads it if available.
 
 ## Prerequisites
 - curl
