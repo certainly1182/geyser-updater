@@ -4,6 +4,7 @@ This script checks for updates to the Geyser standalone jar and downloads it if 
 ## Prerequisites
 - curl
 - unzip
+- tmux
 ## Usage
 1. Download the `update.sh` file.
 2. Make it executable using `chmod +x update.sh`.
